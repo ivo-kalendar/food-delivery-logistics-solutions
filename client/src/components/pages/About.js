@@ -7,8 +7,8 @@ const About = () => {
             <h1>за Страната</h1>
             <p className='my-1'>
                 Ова е full stack MERN Апликација креирана за потребите на{' '}
-                <a target='_blank' rel='noreferrer' href='//www.kolidfoods.com'>
-                    Kolid Foods doo
+                <a target='_blank' rel='noreferrer' href='//www.google.com'>
+                    Food Delivery Company (променето да насочува кон google.com)
                 </a>{' '}
                 .
             </p>
@@ -17,7 +17,7 @@ const About = () => {
                 <a
                     target='_blank'
                     rel='noreferrer'
-                    href='https://github.com/ivo-kalendar/mongo1'>
+                    href='https://github.com/ivo-kalendar/driver-schedule-sass'>
                     <FaGithub /> GitHub
                 </a>{' '}
                 .

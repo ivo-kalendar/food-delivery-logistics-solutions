@@ -1,5 +1,6 @@
 {
     "name": "client",
+    "author": "Ivo Kalendarov <ivokalendar@icloud.com>",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -17,10 +18,9 @@
         "react-to-print": "^2.12.4",
         "web-vitals": "^0.2.4"
     },
-    "author": "Ivo Kalendar <ivokalendar@icloud.com>",
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
+        "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+        "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },

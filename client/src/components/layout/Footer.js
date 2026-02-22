@@ -18,7 +18,7 @@ const Footer = ({ userID }) => {
             korisnik = `${name} ${surname}`;
         }
 
-        document.title = `${user ? korisnik : 'Kolid Foods'} | ${pathname.slice(
+        document.title = `${user ? korisnik : 'Driver Schedule SASS'} | ${pathname.slice(
             1
         )}`;
         // eslint-disable-next-line
