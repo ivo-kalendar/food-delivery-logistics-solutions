@@ -1,11 +1,13 @@
 services:
   food-delivery-logistics-solutions:
     build: .
-    container_name: food-delivery-logistics-solutions-app
     ports:
       - "3002:3002"
     env_file: .env
-    environment:
-      - NODE_ENV=production
-      - PORT=3002
     restart: unless-stopped
+    networks:
+      - main_app_network
+
+networks:
+  main_app_network:
+    external: true
