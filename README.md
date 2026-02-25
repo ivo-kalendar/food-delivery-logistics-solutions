@@ -49,6 +49,46 @@ The backend is designed as a **decoupled API service**. Its modular structure al
 
 ---
 
+## 🧪 Live Demo & Testing
+
+The application is hosted and ready for verification.
+
+<a href="http://213.199.63.251:3002/" target="_blank" rel="noopener noreferrer">
+  🔗 Live Demo Link
+</a>
+
+### Test Credentials:
+| User Role | Username | Password | Access Level |
+| :--- | :--- | :--- | :--- |
+| **Guest User** | ```guestuser``` | ```123456789``` | Unauthorized (Locked Routes) |
+| **Auth User** | ```authuser``` | ```123456789``` | Authorized (Create, Copy, Print) |
+
+---
+
+## 📸 System Interface & Visuals
+
+| **Logistics Archive** | **Dynamic Table Edit** |
+|:---:|:---:|
+| ![Archive](https://github.com/ivo-kalendar/food-delivery-logistics-solutions/blob/master/screenshots/scr_1.png) | ![Edit](https://github.com/ivo-kalendar/food-delivery-logistics-solutions/blob/master/screenshots/scr_5.png) |
+| **Archive**: 500+ table records database. | **Editor**: Real-time route and driver input. |
+
+| **Employee Registry** | **Operational Comments** |
+|:---:|:---:|
+| ![Employees](https://github.com/ivo-kalendar/food-delivery-logistics-solutions/blob/master/screenshots/scr_3.png) | ![Comments](https://github.com/ivo-kalendar/food-delivery-logistics-solutions/blob/master/screenshots/scr_6.png) |
+| **HR**: Full driver fleet management. | **Notes**: Specialized logistics feedback. |
+
+| **Visual Mapping** | **Shift Management** |
+|:---:|:---:|
+| ![Colors](https://github.com/ivo-kalendar/food-delivery-logistics-solutions/blob/master/screenshots/scr_2.png) | ![Shifts](https://github.com/ivo-kalendar/food-delivery-logistics-solutions/blob/master/screenshots/scr_7.png) |
+| **Color Coding**: Product type differentiation. | **Shifts**: 1st and 2nd route segmentation. |
+
+| **Print Manifest** | **Action Dashboard** |
+|:---:|:---:|
+| ![Print](https://github.com/ivo-kalendar/food-delivery-logistics-solutions/blob/master/screenshots/scr_4.png) | ![Actions](https://github.com/ivo-kalendar/food-delivery-logistics-solutions/blob/master/screenshots/scr_8.png) |
+| **Print**: Printable logistics manifest. | **Actions**: Quick action buttons. |
+
+---
+
 ## 📂 Project Architecture & Full-Stack Structure
 
 The application follows a strictly organized, nested architecture. The ```client``` (React/Vite) is housed directly within the ```server``` (Node/Express) root, ensuring that the backend provides both the API services and the static asset serving logic.
@@ -154,43 +194,6 @@ client/src/components/
 
 ---
 
-## 📸 System Interface & Visuals
-
-| **Logistics Archive** | **Dynamic Table Edit** |
-|:---:|:---:|
-| ![Archive](https://github.com/ivo-kalendar/fabric-editor/blob/master/screenshots/scr_1.png) | ![Edit](https://github.com/ivo-kalendar/fabric-editor/blob/master/screenshots/scr_5.png) |
-| **Archive**: 500+ table records database. | **Editor**: Real-time route and driver input. |
-
-| **Employee Registry** | **Operational Comments** |
-|:---:|:---:|
-| ![Employees](https://github.com/ivo-kalendar/fabric-editor/blob/master/screenshots/scr_3.png) | ![Comments](https://github.com/ivo-kalendar/fabric-editor/blob/master/screenshots/scr_6.png) |
-| **HR**: Full driver fleet management. | **Notes**: Specialized logistics feedback. |
-
-| **Visual Mapping** | **Shift Management** |
-|:---:|:---:|
-| ![Colors](https://github.com/ivo-kalendar/fabric-editor/blob/master/screenshots/scr_2.png) | ![Shifts](https://github.com/ivo-kalendar/fabric-editor/blob/master/screenshots/scr_7.png) |
-| **Color Coding**: Product type differentiation. | **Shifts**: 1st and 2nd route segmentation. |
-
-| **Print Manifest** | **Action Dashboard** |
-|:---:|:---:|
-| ![Print](https://github.com/ivo-kalendar/fabric-editor/blob/master/screenshots/scr_4.png) | ![Actions](https://github.com/ivo-kalendar/fabric-editor/blob/master/screenshots/scr_8.png) |
-| **Print**: Printable logistics manifest. | **Actions**: Quick action buttons. |
-
----
-
-## 🧪 Live Demo & Testing
-
-The application is hosted and ready for verification.
-🔗 **[Live Demo Link](http://213.199.63.251:3002/)**
-
-### Test Credentials:
-| User Role | Username | Password | Access Level |
-| :--- | :--- | :--- | :--- |
-| **Guest User** | ```guestuser``` | ```123456789``` | Unauthorized (Locked Routes) |
-| **Auth User** | ```authuser``` | ```123456789``` | Authorized (Create, Copy, Print) |
-
----
-
 ## 🚀 Quick Start & Installation
 
 Ensure you have **Node.js v22+** installed for optimal performance and driver compatibility.
@@ -213,18 +216,6 @@ npm run dev          # Run full-stack concurrently
 npm run build
 npm start
 ```
-
----
-
-
-
-
-
-
-
-
-
-
 ---
 
 ## ⚙️ Business & Logistics Logic
