@@ -154,60 +154,64 @@ food-delivery-logistics-solutions/ (Server Root)
 The frontend is built using a modular component pattern, where UI elements are separated by their functional responsibility (Auth, Layout, Navigation, and Views).
 
 ```text
+### 🧩 Enterprise Architecture: Component Breakdown
+
+The frontend is engineered using a modular atomic design, ensuring that business logic is decoupled from UI presentation.
+
 client/src/components/
 ├── 📁 auth/                # Authentication & Session Management
-│   ├── 📄 Login.jsx         # Интерфејс за најава и складирање на JWT во LocalStorage.
-│   ├── 📄 Logout.jsx        # Логика за бришење токен и ресетирање на AuthState.
-│   └── 📄 Register.jsx      # Форма за нови корисници со валидација на лозинки.
+│   ├── 📄 Login.jsx         # Secure credential validation and JWT session initialization.
+│   ├── 📄 Logout.jsx        # Token clearance and global state reset logic.
+│   └── 📄 Register.jsx      # New user onboarding with real-time validation.
 │
 ├── 📁 events/              # Global UI Event Handlers
-│   └── 📄 Scroll.jsx        # Специјализирана компонента за менаџирање на скролинг кај големи табели.
+│   └── 📄 Scroll.jsx        # Optimized scroll listener for handling large data grids.
 │
 ├── 📁 layout/              # The Core Rendering Engine (UI Logic)
-│   ├── 📄 Card.jsx          # Основен контејнер за приказ на податоци во вид на картичка.
-│   ├── 📄 CardList.jsx      # Грид систем кој ги реди сите зачувани манифести.
-│   ├── 📄 ComponentToPrint.jsx # Wrapper кој ја подготвува табелата за чист А4 принт.
-│   ├── 📄 Copyright.jsx     # Мала компонента за приказ на лиценца и авторски права.
-│   ├── 📄 EditCard.jsx      # Модален прозорец за брза измена на основни податоци на картичката.
-│   ├── 📄 EditedTable.jsx   # Приказ на табела која е во фаза на промена пред зачувување.
-│   ├── 📄 EditString.jsx    # Inline едитор за текстуални полиња во реално време.
-│   ├── 📄 EditTableString.jsx # Специфичен едитор за вредности внатре во самата логистичка мрежа.
-│   ├── 📄 Footer.jsx        # Статичен долен дел со информации за верзијата на софтверот.
-│   ├── 📄 KorisniciView.jsx # Администраторски поглед за управување со корисничките профили.
-│   ├── 📄 LocaleTime.jsx    # Компонента за конверзија и форматирање на време според локална зона.
-│   ├── 📄 MainListView.jsx  # Главна компонента за приказ на листата со активни манифести.
-│   ├── 📄 Navbar.jsx        # Навигација која се менува според ролјата (Admin/User).
-│   ├── 📄 Permisions.jsx    # UI индикатори за тоа кој корисник какви дозволи има.
-│   ├── 📄 Print.jsx         # Логика за повикување на системскиот дијалог за печатење.
-│   ├── 📄 SelectedItem.jsx  # Клучна компонента за манипулација со податоци во еден ред (возач, зона).
-│   ├── 📄 SelectedTable.jsx # "Мозокот" на апликацијата – интерактивна табела за распоред.
-│   ├── 📄 Spinner.jsx       # Глобален лоадер за цела страница.
-│   ├── 📄 spinner.svg       # Векторска анимација за Spinner компонентата.
-│   ├── 📄 Spinner2.jsx      # Полесен, инлајн лоадер за мали транзиции на податоци.
-│   ├── 📄 spinner2.svg      # Векторска анимација за Spinner2.
-│   ├── 📄 TableCard.jsx     # Дизајниран приказ на табела во архивата.
-│   ├── 📄 TableDelete.jsx   # Сигурносен модал за бришење на цели табели од базата.
-│   ├── 📄 TableString.jsx   # Компонента за рендерирање на текстуални вредности во табелата.
-│   ├── 📄 TableView.jsx     # Read-only поглед на табелата (за обични корисници).
-│   ├── 📄 TextString.jsx    # Помошна компонента за форматирање на долги текстови/коментари.
-│   └── 📄 VraboteniView.jsx # Комплетен менаџмент на флотата од возачи и нивниот статус.
+│   ├── 📄 Card.jsx          # Base UI container for displaying structured data objects.
+│   ├── 📄 CardList.jsx      # Grid-based wrapper for the manifest archive.
+│   ├── 📄 ComponentToPrint.jsx # Specialized wrapper for A4-formatted CSS print optimization.
+│   ├── 📄 Copyright.jsx     # Static legal and licensing metadata component.
+│   ├── 📄 EditCard.jsx      # Modal interface for modifying card-level metadata.
+│   ├── 📄 EditedTable.jsx   # Live preview of a manifest in a 'modified' state.
+│   ├── 📄 EditString.jsx    # Generic inline-text editing utility for immediate state updates.
+│   ├── 📄 EditTableString.jsx # Context-aware string editor for the main logistics grid.
+│   ├── 📄 Footer.jsx        # Global footer containing build version and credits.
+│   ├── 📄 KorisniciView.jsx # Admin-only module for user role and permission management.
+│   ├── 📄 LocaleTime.jsx    # Moment.js utility for localized Macedonian date/time formatting.
+│   ├── 📄 MainListView.jsx  # Primary controller for rendering the list of active manifests.
+│   ├── 📄 Navbar.jsx        # Dynamic, role-aware navigation system.
+│   ├── 📄 Permisions.jsx    # UI indicators for visualizing User/Admin access levels.
+│   ├── 📄 Print.jsx         # Higher-order component for triggering the browser print dialogue.
+│   ├── 📄 SelectedItem.jsx  # Critical row-level logic for assigning drivers and commercial zones.
+│   ├── 📄 SelectedTable.jsx # The main interactive ERP engine for daily route planning.
+│   ├── 📄 Spinner.jsx       # Full-screen SVG loading overlay for initial app loads.
+│   ├── 📄 spinner.svg       # Vector asset for global loading states.
+│   ├── 📄 Spinner2.jsx      # Lightweight inline loader for minor data transitions.
+│   ├── 📄 spinner2.svg      # Vector asset for local loading states.
+│   ├── 📄 TableCard.jsx     # Styled presentation component for archived tables.
+│   ├── 📄 TableDelete.jsx   # Security-focused modal for manifest removal from MongoDB.
+│   ├── 📄 TableString.jsx   # Read-only text renderer for table cells.
+│   ├── 📄 TableView.jsx     # Read-only layout for non-privileged users.
+│   ├── 📄 TextString.jsx    # Formatter for operational comments and HQ instructions.
+│   └── 📄 VraboteniView.jsx # Full-scale HR module for driver fleet status and registry.
 │
-├── 📁 links/               # Routing & Protection Layers
-│   ├── 📄 AdminRoutes.jsx   # HOC кој ги блокира сите неовластени пристапи до админ панелот.
-│   ├── 📄 GuestLinks.jsx    # Линкови видливи само за непотврдени корисници (Login/Register).
-│   ├── 📄 GuestRoutes.jsx   # Заштита за гостински рути.
-│   ├── 📄 ListsRoutes.jsx   # Дефинирани патеки за преглед на архивата.
-│   ├── 📄 TableRoutes.jsx   # Динамични рути за пристап до специфични табели преку ID.
-│   ├── 📄 UserLinks.jsx     # Навигација достапна за логирани диспечери.
-│   └── 📄 UserRoutes.jsx    # Заштита за корисничкиот дел од апликацијата.
+├── 📁 links/               # Routing & Protection Layers (RBAC)
+│   ├── 📄 AdminRoutes.jsx   # Security gatekeeper for restricted Administrative views.
+│   ├── 📄 GuestLinks.jsx    # Public navigation links (Login/Register).
+│   ├── 📄 GuestRoutes.jsx   # Redirect logic for authenticated users trying to access guest pages.
+│   ├── 📄 ListsRoutes.jsx   # Route definitions for the historical archive.
+│   ├── 📄 TableRoutes.jsx   # Dynamic routing for unique manifest IDs.
+│   ├── 📄 UserLinks.jsx     # Authorized navigation menu for active dispatchers.
+│   └── 📄 UserRoutes.jsx    # Protected route wrapper for authenticated users.
 │
 └── 📁 pages/               # High-Level View Containers
-    ├── 📄 About.jsx         # Информации за проектот и упатство за користење.
-    ├── 📄 EditProfile.jsx   # Страница за промена на лозинка и лични податоци.
-    ├── 📄 Home.jsx          # Почетен дешборд со брз пристап до денешниот распоред.
-    ├── 📄 Lists.jsx         # Централна архива на сите историски податоци.
-    ├── 📄 Table.jsx         # Главната работна површина за уредување на специфичен распоред.
-    └── 📄 UserProfile.jsx   # Преглед на деталите за најавениот корисник.
+    ├── 📄 About.jsx         # Documentation and system manual view.
+    ├── 📄 EditProfile.jsx   # User settings for password management and profile updates.
+    ├── 📄 Home.jsx          # Live dashboard for real-time logistics overview.
+    ├── 📄 Lists.jsx         # Centralized archive view for all 500+ records.
+    ├── 📄 Table.jsx         # Active workspace for specific manifest editing.
+    └── 📄 UserProfile.jsx   # Identity overview and current permission status.
 ```
 
 ### 🛠️ Component Design Principles:
