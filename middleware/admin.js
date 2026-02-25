@@ -1,5 +1,7 @@
+const { adminId } = require("../config/dbObjectIds.js");
+
 module.exports = function (req, res, next) {
-    if (req.id === '601d1b63d4e3e204d0e67ade') {
+    if (req.id === adminId) {
         next();
     } else {
         res.json([

@@ -113,11 +113,14 @@ Korisnik.prototype.authenticate = function () {
 
                 let isMatch;
 
-                if (authUser) {
+                if (!!authUser && !!authUser.length) {
                     isMatch = await bcrypt.compare(
                         this.data.password,
                         authUser[0].password
                     );
+                } else {
+                    this.errors.push('Тоа корисничко име не постои.');
+                    return reject(this.errors);
                 }
 
                 if (!isMatch) {

@@ -1,14 +1,20 @@
-const mongodb = require("mongodb");
-const connectionString = require("./config/connectionString");
-const dbName = require("./config/dbName");
+const { MongoClient } = require("mongodb");
+const mongoURI = require("./config/mongoURI");
 
-mongodb.connect(
-    connectionString, 
-    { useUnifiedTopology: true, dbName }, 
-    (err, client) => {
-        if (err) throw err;
+const mongodb = new MongoClient(mongoURI, { 
+    useNewUrlParser: true,
+    useUnifiedTopology: true 
+});
 
-        module.exports = client;
+mongodb.connect()
+    .then((connectedClient) => {
+        console.log(`Server started and connected to database!`);
+        
+        module.exports = connectedClient;
+        
         require("./config/app");
-    }
-);
+    })
+    .catch(err => {
+        console.error("Грешка при конекција со MongoDB:", err);
+        process.exit(1); // Сопирање на серверот ако нема база
+    });
