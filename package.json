@@ -6,7 +6,7 @@
     "version": "5.0.0",
     "main": "server.js",
     "scripts": {
-        "start": "node server.js",
+        "start": "NODE_ENV=production node server.js",
         "server": "nodemon server.js",
         "client": "npm start --prefix client",
         "client-install": "npm install --prefix client --legacy-peer-deps",

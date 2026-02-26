@@ -19,4 +19,4 @@ RUN npm run build --prefix client
 # Изложи ја портата 3002
 EXPOSE 3002
 
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
